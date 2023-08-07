@@ -142,6 +142,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "Dotyková obrazovka",
         "NAME_MOUSE_MODE_RELATIVE" : "Touchpad",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "Sdílení relace se správcem ",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Sdílet profil",
+        
         "SECTION_HEADER_CLIENT_MESSAGES" : "Zprávy",
         "SECTION_HEADER_CLIPBOARD"       : "Schránka",
         "SECTION_HEADER_DEVICES"         : "Zařízení",

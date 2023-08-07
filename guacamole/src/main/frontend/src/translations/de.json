@@ -127,6 +127,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "Touchscreen",
         "NAME_MOUSE_MODE_RELATIVE" : "Touchpad",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "Sitzung mit dem Administrator teilen",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Freigabe-Profile",
+        
         "SECTION_HEADER_CLIPBOARD"      : "Zwischenablage",
         "SECTION_HEADER_DEVICES"        : "Geräte",
         "SECTION_HEADER_DISPLAY"        : "Anzeige",
