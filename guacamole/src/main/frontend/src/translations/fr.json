@@ -128,6 +128,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "Écran tactile",
         "NAME_MOUSE_MODE_RELATIVE" : "Pavé tactile",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "Partager la session avec l'administrateur",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Profils de partage",
+        
         "SECTION_HEADER_CLIPBOARD"      : "Presse-papiers",
         "SECTION_HEADER_DEVICES"        : "Appareils",
         "SECTION_HEADER_DISPLAY"        : "Affichage",

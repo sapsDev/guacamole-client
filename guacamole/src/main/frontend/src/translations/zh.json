@@ -143,6 +143,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "触摸屏",
         "NAME_MOUSE_MODE_RELATIVE" : "触控板",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "与管理员共享会话",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "共享简介",
+        
         "SECTION_HEADER_CLIENT_MESSAGES" : "消息",
         "SECTION_HEADER_CLIPBOARD"       : "剪贴板",
         "SECTION_HEADER_DEVICES"         : "设备",
