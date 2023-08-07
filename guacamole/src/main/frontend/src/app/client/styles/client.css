@@ -137,7 +137,7 @@ body.client {
 }
 
 .popup{
-    width: 400px;
+    width: 500px;
     background: #fff;
     border-radius: 6px;
     position: absolute;
@@ -149,14 +149,19 @@ body.client {
     color: #333;
 }
 
-.popup-content{
-
+.popup-content{ 
+    text-align: -webkit-center;
 }
 
-.sharing-link-list{
-
+.popup-content table.sharing-link-list{
+    width: 100%;
 }
 
-.select-sharing-link{
+.popup-content table.sharing-link-list tr:hover{
+    background: #CDA;
+}
 
+.popup-content table.sharing-link-list .select-sharing-link{
+    min-width: 2em;
+    text-align: center;
 }
