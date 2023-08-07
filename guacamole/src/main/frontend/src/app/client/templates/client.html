@@ -241,13 +241,21 @@
                 </thead>
                 <tbody>
                     <tr class="share-profiles" ng-repeat="sharingProfile in sharingProfiles">
-                        <td class="select-session">
-                            <input ng-change="" type="checkbox" ng-model="">
+                        <td class="select-sharing-profile">
+                            <input ng-change="popupProfilesSelectionChange(popupProfiles)" 
+                                   type="checkbox" ng-model="popupProfiles.checked">
                         </td>
                         <td>{{sharingProfile.name}}</td>
                     </tr>
                 </tbody>
             </table>
+            
+            <!-- Buttons -->
+            <div class="popup-action-buttons">
+                <button ng-click="">Test1</button>
+                <button ng-click="">Test2</button>
+                <button ng-click="">Test2</button>
+            </div>
             
         </div>
     </div>
