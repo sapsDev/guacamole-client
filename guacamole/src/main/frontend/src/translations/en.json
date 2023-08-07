@@ -144,6 +144,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "Touchscreen",
         "NAME_MOUSE_MODE_RELATIVE" : "Touchpad",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "Share session with administrator",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Sharing profiles",
+        
         "SECTION_HEADER_CLIENT_MESSAGES" : "Messages",
         "SECTION_HEADER_CLIPBOARD"       : "Clipboard",
         "SECTION_HEADER_DEVICES"         : "Devices",

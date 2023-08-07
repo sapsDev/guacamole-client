@@ -115,6 +115,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "Touch-skjerm",
         "NAME_MOUSE_MODE_RELATIVE" : "Touchpad",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "Dele økten med administratoren",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Utgivelsesprofiler",
+
         "SECTION_HEADER_CLIPBOARD"      : "Utklippstavle",
         "SECTION_HEADER_DEVICES"        : "Enheter",
         "SECTION_HEADER_DISPLAY"        : "Skjerm",

@@ -127,6 +127,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "Pantalla tàctil",
         "NAME_MOUSE_MODE_RELATIVE" : "Touchpad",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "Comparteix la sessió amb l'administrador",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Compartint perfils ",
+        
         "SECTION_HEADER_CLIPBOARD"      : "Portapapers",
         "SECTION_HEADER_DEVICES"        : "Dispositius",
         "SECTION_HEADER_DISPLAY"        : "Pantalla",

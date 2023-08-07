@@ -109,6 +109,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "Touchscreen",
         "NAME_MOUSE_MODE_RELATIVE" : "Touchpad",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "Condividere la sessione con l'amministratore",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Profili di rilascio",
+
         "SECTION_HEADER_CLIPBOARD"      : "Appunti",
         "SECTION_HEADER_DEVICES"        : "Dispositivi",
         "SECTION_HEADER_DISPLAY"        : "Schermo",

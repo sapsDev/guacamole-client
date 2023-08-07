@@ -130,6 +130,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "Tela de toque",
         "NAME_MOUSE_MODE_RELATIVE" : "Touchpad",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "Partilhar a sessão com o administrador",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Perfis de libertação",
+
         "SECTION_HEADER_CLIPBOARD"      : "Área de transferência",
         "SECTION_HEADER_DEVICES"        : "Aparelhos",
         "SECTION_HEADER_DISPLAY"        : "Tela",

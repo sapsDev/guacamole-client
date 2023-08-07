@@ -120,6 +120,9 @@
         "NAME_INPUT_METHOD_TEXT"   : "Ввод текста",
         "NAME_MOUSE_MODE_ABSOLUTE" : "Тачскрин",
         "NAME_MOUSE_MODE_RELATIVE" : "Тачпад",
+        
+        "POPUP_HEADER_SHARE_SESSION"      : "Совместная работа с администратором",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Профили выпуска",
 
         "SECTION_HEADER_CLIPBOARD"      : "Буфер обмена",
         "SECTION_HEADER_DEVICES"        : "Устройства",

@@ -119,6 +119,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "タッチスクリーン",
         "NAME_MOUSE_MODE_RELATIVE" : "タッチパッド",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "管理者とセッションを共有する",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "リリースプロファイル",
+        
         "SECTION_HEADER_CLIPBOARD"      : "クリップボード",
         "SECTION_HEADER_DEVICES"        : "デバイス",
         "SECTION_HEADER_DISPLAY"        : "ディスプレイ",

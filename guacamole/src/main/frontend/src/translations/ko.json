@@ -130,6 +130,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "터치 스크린",
         "NAME_MOUSE_MODE_RELATIVE" : "터치 패드",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "관리자와 세션 공유",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "릴리스 프로필",
+
         "SECTION_HEADER_CLIPBOARD"      : "클립보드",
         "SECTION_HEADER_DEVICES"        : "장치",
         "SECTION_HEADER_DISPLAY"        : "디스플레이",

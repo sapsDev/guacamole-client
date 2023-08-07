@@ -113,6 +113,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "Aanraakscherm",
         "NAME_MOUSE_MODE_RELATIVE" : "Touchpad",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "Sessie delen met de beheerder",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Vrijgaveprofielen",
+
         "SECTION_HEADER_CLIPBOARD"      : "Klembord",
         "SECTION_HEADER_DEVICES"        : "Apparaten",
         "SECTION_HEADER_DISPLAY"        : "Scherm",

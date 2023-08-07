@@ -138,6 +138,9 @@
         "NAME_MOUSE_MODE_ABSOLUTE" : "Ekran dotykowy",
         "NAME_MOUSE_MODE_RELATIVE" : "Touchpad",
 
+        "POPUP_HEADER_SHARE_SESSION"      : "Udostępnianie sesji administratorowi",
+        "POPUP_TABLE_HEADER_PROFILE_NAME" : "Profile wydania",
+
         "SECTION_HEADER_CLIPBOARD"      : "Schowek",
         "SECTION_HEADER_DEVICES"        : "Urządzenia",
         "SECTION_HEADER_DISPLAY"        : "Wyświetlanie",
