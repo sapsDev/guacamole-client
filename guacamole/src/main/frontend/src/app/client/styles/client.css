@@ -149,6 +149,11 @@ body.client {
     color: #333;
 }
 
+.popup-action-buttons{
+    text-align: center;
+    margin: 1em 0;
+}
+
 .popup-content{
     text-align: -webkit-center;
 }
