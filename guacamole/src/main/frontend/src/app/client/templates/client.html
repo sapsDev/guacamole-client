@@ -227,16 +227,20 @@
     <!-- Share session popup window -->
     <div id="share-session-popup-window" class="popup" >
         <div class="popup-content">
+            
+            <!-- Header -->
             <h3>{{'CLIENT.POPUP_HEADER_SHARE_SESSION' | translate}}</h3>
-            <table class="sorted sharing-link-list">
+            
+            <!-- Sharing profile table -->
+            <table class="sorted sharing-profile-list">
                 <thead>
                     <tr>
-                        <th class="select-sharing-link"></th>
+                        <th class="select-sharing-profile"></th>
                         <th>{{'CLIENT.POPUP_TABLE_HEADER_PROFILE_NAME' | translate}}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="sharingProfile in sharingProfiles">
+                    <tr class="share-profiles" ng-repeat="sharingProfile in sharingProfiles">
                         <td class="select-session">
                             <input ng-change="" type="checkbox" ng-model="">
                         </td>
@@ -244,6 +248,7 @@
                     </tr>
                 </tbody>
             </table>
+            
         </div>
     </div>
     

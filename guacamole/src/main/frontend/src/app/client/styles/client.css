@@ -153,15 +153,15 @@ body.client {
     text-align: -webkit-center;
 }
 
-.popup-content table.sharing-link-list{
+.popup-content table.sharing-profile-list{
     width: 100%;
 }
 
-.popup-content table.sharing-link-list tr:hover{
+.popup-content table.sharing-profile-list tr.share-profiles:hover{
     background: #CDA;
 }
 
-.popup-content table.sharing-link-list .select-sharing-link{
+.popup-content table.sharing-profile-list .select-sharing-profile{
     min-width: 2em;
     text-align: center;
 }
