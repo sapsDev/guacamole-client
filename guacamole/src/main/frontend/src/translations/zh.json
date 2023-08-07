@@ -145,6 +145,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "与管理员共享会话",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "共享简介",
+        "POPUP_BUTTON_NONE"               : "没有",
+        "POPUP_BUTTON_SELECTED"           : "选择",
+        "POPUP_BUTTON_ALL"                : "全部 ",
         
         "SECTION_HEADER_CLIENT_MESSAGES" : "消息",
         "SECTION_HEADER_CLIPBOARD"       : "剪贴板",

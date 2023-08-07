@@ -129,6 +129,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Sitzung mit dem Administrator teilen",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Freigabe-Profile",
+        "POPUP_BUTTON_NONE"               : "Keine",
+        "POPUP_BUTTON_SELECTED"           : "Auswahl",
+        "POPUP_BUTTON_ALL"                : "Alle",
         
         "SECTION_HEADER_CLIPBOARD"      : "Zwischenablage",
         "SECTION_HEADER_DEVICES"        : "Geräte",

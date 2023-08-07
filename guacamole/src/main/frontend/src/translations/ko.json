@@ -132,6 +132,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "관리자와 세션 공유",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "릴리스 프로필",
+        "POPUP_BUTTON_NONE"               : "없음",
+        "POPUP_BUTTON_SELECTED"           : "선택됨",
+        "POPUP_BUTTON_ALL"                : "모두",
         
         "SECTION_HEADER_CLIPBOARD"      : "클립보드",
         "SECTION_HEADER_DEVICES"        : "장치",

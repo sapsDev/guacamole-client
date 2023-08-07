@@ -129,6 +129,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Comparteix la sessió amb l'administrador",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Compartint perfils ",
+        "POPUP_BUTTON_NONE"               : "Sense",
+        "POPUP_BUTTON_SELECTED"           : "Seleccionat",
+        "POPUP_BUTTON_ALL"                : "Tots",
         
         "SECTION_HEADER_CLIPBOARD"      : "Portapapers",
         "SECTION_HEADER_DEVICES"        : "Dispositius",

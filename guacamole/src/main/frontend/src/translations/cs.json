@@ -144,6 +144,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Sdílení relace se správcem ",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Sdílet profil",
+        "POPUP_BUTTON_NONE"               : "Žádná",
+        "POPUP_BUTTON_SELECTED"           : "Výběr",
+        "POPUP_BUTTON_ALL"                : "Všechny",
         
         "SECTION_HEADER_CLIENT_MESSAGES" : "Zprávy",
         "SECTION_HEADER_CLIPBOARD"       : "Schránka",

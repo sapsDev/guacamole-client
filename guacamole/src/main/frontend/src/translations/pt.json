@@ -132,6 +132,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Partilhar a sessão com o administrador",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Perfis de libertação",
+        "POPUP_BUTTON_NONE"               : "Nenhum",
+        "POPUP_BUTTON_SELECTED"           : "Seleção",
+        "POPUP_BUTTON_ALL"                : "Todos",
         
         "SECTION_HEADER_CLIPBOARD"      : "Área de transferência",
         "SECTION_HEADER_DEVICES"        : "Aparelhos",

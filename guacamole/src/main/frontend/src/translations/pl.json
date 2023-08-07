@@ -140,6 +140,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Udostępnianie sesji administratorowi",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Profile wydania",
+        "POPUP_BUTTON_NONE"               : "Brak",
+        "POPUP_BUTTON_SELECTED"           : "Wybór",
+        "POPUP_BUTTON_ALL"                : "Wszystkie",
         
         "SECTION_HEADER_CLIPBOARD"      : "Schowek",
         "SECTION_HEADER_DEVICES"        : "Urządzenia",
