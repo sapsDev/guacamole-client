@@ -115,6 +115,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Sessie delen met de beheerder",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Vrijgaveprofielen",
+        "POPUP_BUTTON_NONE"               : "Geen",
+        "POPUP_BUTTON_SELECTED"           : "Selectie",
+        "POPUP_BUTTON_ALL"                : "Alle",
         
         "SECTION_HEADER_CLIPBOARD"      : "Klembord",
         "SECTION_HEADER_DEVICES"        : "Apparaten",

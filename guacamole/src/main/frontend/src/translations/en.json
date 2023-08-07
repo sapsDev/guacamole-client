@@ -146,6 +146,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Share session with administrator",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Sharing profiles",
+        "POPUP_BUTTON_NONE"               : "None",
+        "POPUP_BUTTON_SELECTED"           : "Selected",
+        "POPUP_BUTTON_ALL"                : "All",
         
         "SECTION_HEADER_CLIENT_MESSAGES" : "Messages",
         "SECTION_HEADER_CLIPBOARD"       : "Clipboard",

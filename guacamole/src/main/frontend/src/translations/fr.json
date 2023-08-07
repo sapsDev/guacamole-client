@@ -130,6 +130,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Partager la session avec l'administrateur",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Profils de partage",
+        "POPUP_BUTTON_NONE"               : "Pas de",
+        "POPUP_BUTTON_SELECTED"           : "Sélection",
+        "POPUP_BUTTON_ALL"                : "Tous les",
         
         "SECTION_HEADER_CLIPBOARD"      : "Presse-papiers",
         "SECTION_HEADER_DEVICES"        : "Appareils",

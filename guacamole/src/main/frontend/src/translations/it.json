@@ -111,6 +111,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Condividere la sessione con l'amministratore",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Profili di rilascio",
+        "POPUP_BUTTON_NONE"               : "Nessuno",
+        "POPUP_BUTTON_SELECTED"           : "Selezionato",
+        "POPUP_BUTTON_ALL"                : "Tutti",
         
         "SECTION_HEADER_CLIPBOARD"      : "Appunti",
         "SECTION_HEADER_DEVICES"        : "Dispositivi",

@@ -121,6 +121,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "管理者とセッションを共有する",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "リリースプロファイル",
+        "POPUP_BUTTON_NONE"               : "なし",
+        "POPUP_BUTTON_SELECTED"           : "セレクション",
+        "POPUP_BUTTON_ALL"                : "すべて",
         
         "SECTION_HEADER_CLIPBOARD"      : "クリップボード",
         "SECTION_HEADER_DEVICES"        : "デバイス",

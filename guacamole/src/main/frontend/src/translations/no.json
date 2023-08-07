@@ -117,6 +117,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Dele økten med administratoren",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Utgivelsesprofiler",
+        "POPUP_BUTTON_NONE"               : "Ingen",
+        "POPUP_BUTTON_SELECTED"           : "Utvalg",
+        "POPUP_BUTTON_ALL"                : "Alle",
         
         "SECTION_HEADER_CLIPBOARD"      : "Utklippstavle",
         "SECTION_HEADER_DEVICES"        : "Enheter",

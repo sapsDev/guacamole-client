@@ -123,6 +123,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Совместная работа с администратором",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Профили выпуска",
+        "POPUP_BUTTON_NONE"               : "Нет",
+        "POPUP_BUTTON_SELECTED"           : "Выбор",
+        "POPUP_BUTTON_ALL"                : "Все",
         
         "SECTION_HEADER_CLIPBOARD"      : "Буфер обмена",
         "SECTION_HEADER_DEVICES"        : "Устройства",

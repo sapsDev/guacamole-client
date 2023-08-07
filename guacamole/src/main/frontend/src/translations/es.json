@@ -131,6 +131,9 @@
 
         "POPUP_HEADER_SHARE_SESSION"      : "Compartir sesión con el administrador",
         "POPUP_TABLE_HEADER_PROFILE_NAME" : "Compartir-perfiles",
+        "POPUP_BUTTON_NONE"               : "Sin",
+        "POPUP_BUTTON_SELECTED"           : "Selección",
+        "POPUP_BUTTON_ALL"                : "Todos",
         
         "SECTION_HEADER_CLIPBOARD"      : "Portapapeles",
         "SECTION_HEADER_DEVICES"        : "Dispositivos",
