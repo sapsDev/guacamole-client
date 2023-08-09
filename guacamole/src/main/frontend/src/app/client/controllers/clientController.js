@@ -830,6 +830,59 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
 
     };
 
+    /**
+     * Array of all currently selected sharing profiles
+     * at popup window
+     *
+     * @type SharingProfile[]
+     */
+    var allSelectedPopupProfiles = null;    
+    
+    /**
+     * Called whenever an selected sharing profile at
+     * popup window changes selected status.
+     *
+     * @param profile {SharingProfile}
+     *      The profile whose selected status has changed
+     */
+    $scope.popupProfilesSelectionChange = function popupProfilesSelectionChange(profile)
+    {
+        // Get selection array, creating if necessary
+        var selectedProfiles = allSelectedPopupProfiles;
+        if (!selectedProfiles)
+            selectedProfiles = allSelectedPopupProfiles = [];
+        
+        // Add profile to array if selected 
+        if(!allSelectedPopupProfiles.includes(profile))
+            selectedProfiles.push(profile);
+        
+        // Otherwise remove profile form array
+        else 
+            selectedProfiles.splice(selectedProfiles.indexOf(profile),1);
+            
+    }
+
+    /**
+     * Called to check if sharing profile at popup 
+     * window is selected
+     * 
+     * @param profile {SharingProfile}
+     *      The profile whose status
+     *      should checked
+     * 
+     * @returns {Boolean}
+     *      true, if the given sharing profile
+     *      is currently selected 
+     */
+    $scope.popupProfilesSelectionCheck = function popupProfileSelection(profile)
+    {
+        // Get selection array
+        var selectedProfiles = allSelectedPopupProfiles;
+        
+        // Return true if profile selected otherwise false
+        return selectedProfiles.includes(profile);
+    }
+            
     // Clean up when view destroyed
     $scope.$on('$destroy', function clientViewDestroyed() {
         setAttachedGroup(null);
