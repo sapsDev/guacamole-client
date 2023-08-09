@@ -879,7 +879,7 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
      *      true, if the given sharing profile
      *      is currently selected 
      */
-    $scope.popupProfilesSelectionCheck = function popupProfileSelection(profile)
+    $scope.popupProfilesSelection = function popupProfileSelection(profile)
     {
         // Get selection array
         var selectedProfiles = allSelectedPopupProfiles;
