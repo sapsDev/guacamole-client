@@ -836,7 +836,12 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
      *
      * @type SharingProfile[]
      */
-    var allSelectedPopupProfiles = null;    
+    var allSelectedPopupProfiles = null;
+    
+    /**
+     * Testing
+     */
+    $scope.allSelectedPopupProfiles = allSelectedPopupProfiles; 
     
     /**
      * Called whenever an selected sharing profile at

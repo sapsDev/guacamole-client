@@ -260,5 +260,20 @@
             
         </div>
     </div>
+    
+    <!-- Testing Area -->
+    <div class="test-popup">
+        <div class="test-popup-content">
+            
+            <!-- Header -->
+            <h3>Currently selected profiles</h3>
+            
+            <!-- List of all currently selected profiles -->
+            <ul>
+                <li ng-repeat="sharingProfile in allSelectedPopupProfiles">{{sharingProfile.name}}</li>
+            </ul>
+            
+        </div>
+    </div>
 
 </guac-viewport>
