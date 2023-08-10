@@ -513,7 +513,15 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         tunnelService.getSharingProfiles(uuid)
         .then(function sharingProfilesRetrieved(sharingProfiles) {
             $scope.sharingProfiles = sharingProfiles;
+            
+            //Testing
+            console.log("Loaded scope.sharingProfiles Counter: " + Object.keys($scope.sharingProfiles).length)
+            
             allSharingProfiles = Object.values(sharingProfiles);
+            
+            //Testing
+            console.log("Loaded allSharingProfiles Counter: " + allSharingProfiles.length)
+            
         }, requestService.WARN);
 
         // Attempt to produce wrapped list of sharing profiles
@@ -867,6 +875,9 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
      */
     var wrapAllSharingProfiles = function wrapAllSharingProfiles() {
         
+        //Testing
+        console.log("At Method wrapAllSharingProfiles")
+        
         //Abort if not all required data is available
         if(!allSharingProfiles)
             return;
@@ -875,6 +886,9 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         $scope.popupWrappers = [];
         angular.forEach(allSharingProfiles, function wrapSharingProfiles(sharingProfile) {
            
+            //Testing
+            console.log("Wrapping: " + sharingProfile.name)
+            
             //Add wrapper
             $scope.popupWrappers.push(new SharingProfileWrapper({
                 identifier : sharingProfile.identifier,
