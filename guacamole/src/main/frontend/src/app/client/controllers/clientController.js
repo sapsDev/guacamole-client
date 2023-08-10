@@ -521,11 +521,11 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
             
             //Testing
             console.log("Loaded allSharingProfiles Counter: " + allSharingProfiles.length)
+
+            // Attempt to produce wrapped list of sharing profiles
+            wrapAllSharingProfiles();
             
         }, requestService.WARN);
-
-        // Attempt to produce wrapped list of sharing profiles
-        wrapAllSharingProfiles();
 
     });
 
