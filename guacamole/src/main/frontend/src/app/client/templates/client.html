@@ -242,9 +242,9 @@
                 <tbody>
                 <tr class="share-profiles" ng-repeat="sharingProfile in sharingProfiles">
                     <td class="select-sharing-profile">
-                        <input ng-change="popupProfilesSelectionChange(sharingProfile)"
+                        <input ng-change="popupWrapperSelectionChange(sharingProfile)"
                                type="checkbox" 
-                               ng-model="popupProfileSelection(sharingProfile)">
+                               ng-model="">
                     </td>
                     <td>{{sharingProfile.name}}</td>
                 </tr>
