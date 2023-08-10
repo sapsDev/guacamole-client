@@ -240,11 +240,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="share-profiles" ng-repeat="sharingProfile in sharingProfiles">
+                <tr class="share-profiles" ng-repeat="wrapper in popupWrappers">
                     <td class="select-sharing-profile">
-                        <input ng-change="popupWrapperSelectionChange(sharingProfile)"
+                        <input ng-change="popupWrapperSelectionChange(wrapper)"
                                type="checkbox" 
-                               ng-model="">
+                               ng-model="wrapper.checked">
                     </td>
                     <td>{{sharingProfile.name}}</td>
                 </tr>
