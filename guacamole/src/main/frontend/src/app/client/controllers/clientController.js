@@ -24,13 +24,14 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         function clientController($scope, $routeParams, $injector) {
 
     // Required types
-    const ConnectionGroup    = $injector.get('ConnectionGroup');
-    const ManagedClient      = $injector.get('ManagedClient');
-    const ManagedClientGroup = $injector.get('ManagedClientGroup');
-    const ManagedClientState = $injector.get('ManagedClientState');
-    const ManagedFilesystem  = $injector.get('ManagedFilesystem');
-    const Protocol           = $injector.get('Protocol');
-    const ScrollState        = $injector.get('ScrollState');
+    const ConnectionGroup       = $injector.get('ConnectionGroup');
+    const ManagedClient         = $injector.get('ManagedClient');
+    const ManagedClientGroup    = $injector.get('ManagedClientGroup');
+    const ManagedClientState    = $injector.get('ManagedClientState');
+    const ManagedFilesystem     = $injector.get('ManagedFilesystem');
+    const Protocol              = $injector.get('Protocol');
+    const ScrollState           = $injector.get('ScrollState');
+    const SharingProfileWrapper = $injector.get('SharingProfileWrapper');
 
     // Required services
     const $location              = $injector.get('$location');
@@ -379,6 +380,14 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
     $scope.sharingProfiles = {};
 
     /**
+     * All sharing profiles if known, or null if sharing profiles have not
+     * yet been loaded
+     * 
+     * @type SharingProfile[]
+     */
+    var allSharingProfiles = null;
+
+    /**
      * Map of all substituted key presses.  If one key is pressed in place of another
      * the value of the substituted key is stored in an object with the keysym of
      * the original key.
@@ -504,6 +513,7 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         tunnelService.getSharingProfiles(uuid)
         .then(function sharingProfilesRetrieved(sharingProfiles) {
             $scope.sharingProfiles = sharingProfiles;
+            allSharingProfiles = Object.values(sharingProfiles);
         }, requestService.WARN);
 
     });
@@ -831,61 +841,60 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
     };
 
     /**
-     * Array of all currently selected sharing profiles
-     * at popup window
+     * The SharingProfileWrappers of all available sharing profiles 
+     * for the current session, null if the sharing profiles have 
+     * not yet been loaded.
      *
-     * @type SharingProfile[]
+     * @type SharingProfileWrapper[]
      */
-    var allSelectedPopupProfiles = [];
+    $scope.popupWrappers = null;
+
+    /**
+     * Array of all currently selected sharing profile wrappers at
+     * popup window
+     * 
+     * @type SharingProfileWrapper[]
+     */
+    var allSelectedPopupWrappers = [];
+
+    /**
+     * Wraps all loaded sharing profiles, storing the resulting array
+     * within the scope. If required data has not yet finished loading,
+     * this function has no effect.
+     */
+    var wrapAllSharingProfiles = function wrapAllSharingProfiles() {
+        
+        //Abort if not all required data is available
+        if(!allSharingProfiles)
+            return;
+        
+        //Wrap all active connections for sake of display
+        $scope.popupWrappers = [];
+        
+    }
     
     /**
-     * Testing
-     */
-    $scope.allSelectedPopupProfiles = allSelectedPopupProfiles; 
-    
-    /**
-     * Called whenever an selected sharing profile at
-     * popup window changes selected status.
+     * Called whenever an sharing profile wrapper changes selected
+     * status.
      *
-     * @param profile {SharingProfile}
      *      The profile whose selected status has changed
+     * @param {SharingProfileWrapper} wrapper
      */
-    $scope.popupProfilesSelectionChange = function popupProfilesSelectionChange(profile)
-    {
+    $scope.popupWrapperSelectionChange = function popupWrapperSelectionChange(wrapper) {
+        
         // Get selection array, creating if necessary
-        var selectedProfiles = allSelectedPopupProfiles;
-        if (!selectedProfiles)
-            selectedProfiles = allSelectedPopupProfiles = [];
+        var selectedWrappers = allSelectedPopupWrappers;
+        if(!selectedWrappers)
+            selectedWrappers = allSelectedPopupWrappers = [];
         
         // Add profile to array if selected 
-        if(!allSelectedPopupProfiles.includes(profile))
-            selectedProfiles.push(profile);
+        if (wrapper.checked)
+            selectedWrappers.push(wrapper);
         
         // Otherwise remove profile form array
         else 
-            selectedProfiles.splice(selectedProfiles.indexOf(profile),1);
+            selectedWrappers.splice(selectedWrappers.indexOf(wrapper), 1);
             
-    }
-
-    /**
-     * Called to check if sharing profile at popup 
-     * window is selected
-     * 
-     * @param profile {SharingProfile}
-     *      The profile whose status
-     *      should checked
-     * 
-     * @returns {Boolean}
-     *      true, if the given sharing profile
-     *      is currently selected 
-     */
-    $scope.popupProfilesSelection = function popupProfileSelection(profile)
-    {
-        // Get selection array
-        var selectedProfiles = allSelectedPopupProfiles;
-        
-        // Return true if profile selected otherwise false
-        return selectedProfiles.includes(profile);
     }
             
     // Clean up when view destroyed
