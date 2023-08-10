@@ -516,6 +516,9 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
             allSharingProfiles = Object.values(sharingProfiles);
         }, requestService.WARN);
 
+        // Attempt to produce wrapped list of sharing profiles
+        wrapAllSharingProfiles();
+
     });
 
     /**
@@ -870,8 +873,17 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         
         //Wrap all active connections for sake of display
         $scope.popupWrappers = [];
+        angular.forEach(allSharingProfiles, function wrapSharingProfiles(sharingProfile) {
+           
+            //Add wrapper
+            $scope.popupWrappers.push(new SharingProfileWrapper({
+                identifier : sharingProfile.identifier,
+                name       : sharingProfile.name
+            }));
+            
+        });
         
-    }
+    };
     
     /**
      * Called whenever an sharing profile wrapper changes selected
