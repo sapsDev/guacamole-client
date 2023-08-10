@@ -18,21 +18,21 @@
  */
 
 /**
- * A service for defining the SharingLinkWrapper class.
+ * A service for defining the SharingProfileWrapper class.
  */
-angular.module('client').factory('SharingLinkWrapper', [
-    function defineSharingLinkWrapper() {
+angular.module('client').factory('SharingProfileWrapper', [
+    function defineSharingProfileWrapper() {
 
     /**
-     * Wrapper for Sharing links at popup window 
+     * Wrapper for Sharing profiles at popup window 
      * which adds checked option.
      * 
      * @constructor
-     * @param {SharingLinkWrapper|Object} template
+     * @param {SharingProfileWrapper|Object} template
      *      The object whose properties should be copied
-     *      within the new SharingLinkWrapper
+     *      within the new SharingProfileWrapper
      */
-    var SharingLinkWrapper = function SharingLinkWrapper(template) {
+    var SharingProfileWrapper = function SharingProfileWrapper(template) {
 
         /**
          * The unique identifier associated with this sharing profile.
@@ -42,14 +42,14 @@ angular.module('client').factory('SharingLinkWrapper', [
         this.identifier = template.identifier;
         
         /**
-         * The display name of this sharing link.
+         * The display name of this sharing profile.
          * 
          * @type String
          */
         this.name = template.name;
 
         /**
-         * A flag indicating that the sharing link has been selected.
+         * A flag indicating that the sharing profile has been selected.
          * 
          * @type Boolean
          */
@@ -57,6 +57,6 @@ angular.module('client').factory('SharingLinkWrapper', [
         
     };
     
-    return SharingLinkWrapper;
+    return SharingProfileWrapper;
     
 }]);
