@@ -24,13 +24,14 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         function clientController($scope, $routeParams, $injector) {
 
     // Required types
-    const ConnectionGroup    = $injector.get('ConnectionGroup');
-    const ManagedClient      = $injector.get('ManagedClient');
-    const ManagedClientGroup = $injector.get('ManagedClientGroup');
-    const ManagedClientState = $injector.get('ManagedClientState');
-    const ManagedFilesystem  = $injector.get('ManagedFilesystem');
-    const Protocol           = $injector.get('Protocol');
-    const ScrollState        = $injector.get('ScrollState');
+    const ConnectionGroup       = $injector.get('ConnectionGroup');
+    const ManagedClient         = $injector.get('ManagedClient');
+    const ManagedClientGroup    = $injector.get('ManagedClientGroup');
+    const ManagedClientState    = $injector.get('ManagedClientState');
+    const ManagedFilesystem     = $injector.get('ManagedFilesystem');
+    const Protocol              = $injector.get('Protocol');
+    const ScrollState           = $injector.get('ScrollState');
+    const SharingProfileWrapper = $injector.get('SharingProfileWrapper');
 
     // Required services
     const $location              = $injector.get('$location');
@@ -379,6 +380,14 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
     $scope.sharingProfiles = {};
 
     /**
+     * All sharing profiles if known, or null if sharing profiles have not
+     * yet been loaded
+     *
+     * @type SharingProfile[]
+     */
+    var allSharingProfiles = null;
+    
+    /**
      * Map of all substituted key presses.  If one key is pressed in place of another
      * the value of the substituted key is stored in an object with the keysym of
      * the original key.
@@ -504,6 +513,11 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         tunnelService.getSharingProfiles(uuid)
         .then(function sharingProfilesRetrieved(sharingProfiles) {
             $scope.sharingProfiles = sharingProfiles;
+            allSharingProfiles     = Object.values(sharingProfiles);
+            
+            //Attempt to produce wrapped list of sharing profiles
+            wrapAllSharingProfiles();
+            
         }, requestService.WARN);
 
     });
@@ -830,6 +844,71 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
 
     };
 
+    /**
+     * The SharingProfileWrappers of all available sharing profiles
+     * for the current session, null if the sharing profiles have
+     * not yet been loaded.
+     *
+     * @type SharingProfileWrapper[]
+     */
+    $scope.popupWrappers = null;
+
+    /**
+     * Array of all currently selected sharing profile wrappers at
+     * popup window
+     *
+     * @type SharingProfileWrapper[]
+     */
+    var allSelectedPopupWrappers = [];
+
+    /**
+     * Wraps all loaded sharing profiles, storing the resulting array
+     * within the scope. If required data has not yet finished loading,
+     * this function has no effect.
+     */
+    var wrapAllSharingProfiles = function wrapAllSharingProfiles() {
+
+        //Abort if not all required data is available
+        if(!allSharingProfiles)
+            return;
+
+        //Wrap all active connections for sake of display
+        $scope.popupWrappers = [];
+        angular.forEach(allSharingProfiles, function wrapSharingProfiles(sharingProfile) {
+
+            //Add wrapper
+            $scope.popupWrappers.push(new SharingProfileWrapper({
+                identifier : sharingProfile.identifier,
+                name       : sharingProfile.name
+            }));
+
+        });
+
+    };
+
+    /**
+     * Called whenever an sharing profile wrapper changes selected
+     * status.
+     *
+     *      The profile whose selected status has changed
+     * @param {SharingProfileWrapper} wrapper
+     */
+    $scope.popupWrapperSelectionChange = function popupWrapperSelectionChange(wrapper) {
+
+        // Get selection array, creating if necessary
+        var selectedWrappers = allSelectedPopupWrappers;
+        if (!selectedWrappers)
+            selectedWrappers = allSelectedPopupWrappers = [];
+
+        // Add wrapper to array if selected 
+        if (wrapper.checked)
+            selectedWrappers.push(wrapper);
+
+        //Otherwise remove wrapper from array
+        else
+            selectedWrappers.splice(selectedWrappers.indexOf(wrapper), 1);
+    };    
+    
     // Clean up when view destroyed
     $scope.$on('$destroy', function clientViewDestroyed() {
         setAttachedGroup(null);
