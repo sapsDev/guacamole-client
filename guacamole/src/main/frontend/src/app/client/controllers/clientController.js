@@ -908,19 +908,30 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
      */
     $scope.popupWrapperSelectionChange = function popupWrapperSelectionChange(wrapper) {
         
+        //Testing
+        console.log("popupWrapperSelectionChange called")
+        
         // Get selection array, creating if necessary
         var selectedWrappers = allSelectedPopupWrappers;
         if(!selectedWrappers)
             selectedWrappers = allSelectedPopupWrappers = [];
         
-        // Add profile to array if selected 
-        if (wrapper.checked)
+        // Add wrapper to array if selected 
+        if (wrapper.checked){
             selectedWrappers.push(wrapper);
+            //Testing
+            console.log("Added wrapper")
+        }
         
-        // Otherwise remove profile form array
-        else 
+        // Otherwise remove wrapper from array
+        else{
             selectedWrappers.splice(selectedWrappers.indexOf(wrapper), 1);
-            
+            //Testing
+            console.log("Removed wrapper")
+        } 
+        
+        //Testing
+        console.log("allSelectedPopupWrappers.length: " + allSelectedPopupWrappers.length)
     }
             
     // Clean up when view destroyed
