@@ -922,7 +922,11 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
     $scope.openPopup = function openPopup() {
         document.getElementById("share-session-popup-window").style.visibility = "visible";
     }
-    
+
+    /**
+     *  Initiates the creation of administrator links for all sharing 
+     *  profiles selected in the popup window
+     */
     $scope.shareSelected = function shareSelected() {
         var selectedProfiles = [];
         
@@ -931,8 +935,12 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         
         selectedProfiles.forEach((profile) => 
             ManagedClient.createAdminShareLink($scope.focusedClient, profile));
-    } 
-    
+    }
+
+    /**
+     *  Initiates the creation of administrator links for all sharing
+     *  profiles available for the current session
+     */
     $scope.shareAll = function shareAll() {
         var allProfiles = Object.values($scope.sharingProfiles);
         
