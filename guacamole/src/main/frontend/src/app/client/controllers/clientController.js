@@ -915,6 +915,13 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
     $scope.closePopup = function closePopup() {
         document.getElementById("share-session-popup-window").style.visibility = "hidden";
     }
+
+    /**
+     * Opens the popup window
+     */
+    $scope.closePopup = function openPopup() {
+        document.getElementById("share-session-popup-window").style.visibility = "visible";
+    }
     
     // Clean up when view destroyed
     $scope.$on('$destroy', function clientViewDestroyed() {
