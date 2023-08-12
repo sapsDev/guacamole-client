@@ -935,6 +935,8 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         
         selectedProfiles.forEach((profile) => 
             ManagedClient.createAdminShareLink($scope.focusedClient, profile));
+        
+        $scope.closePopup();
     }
 
     /**
@@ -946,6 +948,8 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         
         allProfiles.forEach((profile) => 
             ManagedClient.createAdminShareLink($scope.focusedClient, profile));
+
+        $scope.closePopup();
     }
     
     // Clean up when view destroyed
