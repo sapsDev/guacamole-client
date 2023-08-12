@@ -225,7 +225,7 @@
     </div>
 
     <!-- Share session popup window -->
-    <div id="share-session-popup-window" class="popup" >
+    <div id="share-session-popup-window" class="popup" ng-show="canShareConnection()">
         <div class="popup-content">
 
             <!-- Header -->
@@ -234,17 +234,19 @@
             <!-- Sharing profile table -->
             <table class="sorted sharing-profile-list">
                 <thead>
-                <tr>
-                    <th class="select-sharing-profile"></th>
-                    <th>{{'CLIENT.POPUP_TABLE_HEADER_PROFILE_NAME' | translate}}</th>
-                </tr>
+                    <tr>
+                        <th class="select-sharing-profile"></th>
+                        <th>{{'CLIENT.POPUP_TABLE_HEADER_PROFILE_NAME' | translate}}</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr class="share-profiles">
+                <tr class="share-profiles" ng-repeat="wrapper in popupWrappers">
                     <td class="select-sharing-profile">
-                        <input type="checkbox">
+                        <input ng-change="popupWrapperSelectionChange(wrapper)"
+                               type="checkbox"
+                               ng-model="wrapper.checked">
                     </td>
-                    <td>{{sharingProfile.name}}</td>
+                    <td>{{wrapper.name}}</td>
                 </tr>
                 </tbody>
             </table>

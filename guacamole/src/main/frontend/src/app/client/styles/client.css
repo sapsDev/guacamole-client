@@ -135,38 +135,3 @@ body.client {
 .client .drop-pending .display > *{
     opacity: 0.5;
 }
-
-.popup{
-    width: 500px;
-    background: #fff;
-    border-radius: 6px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: #333;
-}
-
-.popup-action-buttons{
-    text-align: center;
-    margin: 1em 0;
-}
-
-.popup-content{
-    text-align: -webkit-center;
-}
-
-.popup-content table.sharing-profile-list{
-    width: 100%;
-}
-
-.popup-content table.sharing-profile-list tr.share-profiles:hover{
-    background: #CDA;
-}
-
-.popup-content table.sharing-profile-list .select-sharing-profile{
-    min-width: 2em;
-    text-align: center;
-}
