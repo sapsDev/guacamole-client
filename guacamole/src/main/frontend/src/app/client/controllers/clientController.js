@@ -919,8 +919,25 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
     /**
      * Opens the popup window
      */
-    $scope.closePopup = function openPopup() {
+    $scope.openPopup = function openPopup() {
         document.getElementById("share-session-popup-window").style.visibility = "visible";
+    }
+    
+    $scope.shareSelected = function shareSelected() {
+        var selectedProfiles = [];
+        
+        allSelectedPopupWrappers.forEach((wrapper) => 
+            selectedProfiles.push($scope.sharingProfiles[wrapper.identifier]));
+        
+        selectedProfiles.forEach((profile) => 
+            ManagedClient.createAdminShareLink($scope.focusedClient, profile));
+    } 
+    
+    $scope.shareAll = function shareAll() {
+        var allProfiles = Object.values($scope.sharingProfiles);
+        
+        allProfiles.forEach((profile) => 
+            ManagedClient.createAdminShareLink($scope.focusedClient, profile));
     }
     
     // Clean up when view destroyed
