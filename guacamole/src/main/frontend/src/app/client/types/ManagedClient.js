@@ -923,6 +923,39 @@ angular.module('client').factory('ManagedClient', ['$rootScope', '$injector',
     };
 
     /**
+     * Produces a sharing link for the given ManagedClient using the given
+     * sharing profile.
+     * //TODO: Description how link is send to server
+     * 
+     * @param {ManagedClient} client
+     *      The ManagedClient which will be shared via the generated sharing
+     *      link.
+     *
+     * @param {SharingProfile} sharingProfile
+     *      The sharing profile to use to generate the sharing link.
+     *
+     * @returns {Promise}
+     *      A Promise which is resolved once the sharing link has been
+     *      successfully generated, and rejected if generating the link fails.
+     */
+    ManagedClient.createAdminShareLink = function createAdminShareLink(client, sharingProfile) {
+
+        // Retrieve sharing credentials for the sake of generating a share link
+        var credentialRequest = tunnelService.getSharingCredentials(
+            client.tunnel.uuid, sharingProfile.identifier);
+
+        // Send generated share link once the credentials are ready
+        credentialRequest.then(function sharingCredentialsReceived(sharingCredentials) {
+            var link = ManagedShareLink.getInstance(sharingProfile, sharingCredentials);
+            //TODO: Send link to the server
+
+        }, requestService.WARN);
+
+        return  credentialRequest;
+        
+    }
+
+    /**
      * Returns whether the given ManagedClient is being shared. A ManagedClient
      * is shared if it has any associated share links.
      *
