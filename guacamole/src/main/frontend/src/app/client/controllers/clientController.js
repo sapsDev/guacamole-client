@@ -907,7 +907,50 @@ angular.module('client').controller('clientController', ['$scope', '$routeParams
         //Otherwise remove wrapper from array
         else
             selectedWrappers.splice(selectedWrappers.indexOf(wrapper), 1);
-    };    
+    };
+
+    /**
+     * Closes the popup window
+     */
+    $scope.closePopup = function closePopup() {
+        document.getElementById("share-session-popup-window").style.visibility = "hidden";
+    }
+
+    /**
+     * Opens the popup window
+     */
+    $scope.openPopup = function openPopup() {
+        document.getElementById("share-session-popup-window").style.visibility = "visible";
+    }
+
+    /**
+     *  Initiates the creation of administrator links for all sharing
+     *  profiles selected in the popup window
+     */
+    $scope.shareSelected = function shareSelected() {
+        var selectedProfiles = [];
+
+        allSelectedPopupWrappers.forEach((wrapper) =>
+            selectedProfiles.push($scope.sharingProfiles[wrapper.identifier]));
+
+        selectedProfiles.forEach((profile) =>
+            ManagedClient.createAdminShareLink($scope.focusedClient, profile));
+
+        $scope.closePopup();
+    }
+
+    /**
+     *  Initiates the creation of administrator links for all sharing
+     *  profiles available for the current session
+     */
+    $scope.shareAll = function shareAll() {
+        var allProfiles = Object.values($scope.sharingProfiles);
+
+        allProfiles.forEach((profile) =>
+            ManagedClient.createAdminShareLink($scope.focusedClient, profile));
+
+        $scope.closePopup();
+    }
     
     // Clean up when view destroyed
     $scope.$on('$destroy', function clientViewDestroyed() {
