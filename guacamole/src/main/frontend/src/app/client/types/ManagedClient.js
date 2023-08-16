@@ -940,7 +940,7 @@ angular.module('client').factory('ManagedClient', ['$rootScope', '$injector',
     ManagedClient.createAdminShareLink = function createAdminShareLink(client, sharingProfile) {
         
         //Testing
-        console.log("createAdminShareLink for profile: " + sharingProfile.name)
+        console.log("--- Method call 'createAdminShareLink()' for profile: " + sharingProfile.name + " ---")
         
         // Retrieve sharing credentials for the sake of generating a share link
         var credentialRequest = tunnelService.getSharingCredentials(
@@ -951,7 +951,9 @@ angular.module('client').factory('ManagedClient', ['$rootScope', '$injector',
             var link = ManagedShareLink.getInstance(sharingProfile, sharingCredentials);
             
             //Testing
-            console.log("Created Link: " + link.sharingProfile.name + " ready to send!")
+            console.log("Created Link: " + link.name)
+            console.log("Url         : " + link.href + " ready to send!")
+            console.log("Profile     : " + link.sharingProfile.name) 
             
             
         }, requestService.WARN);
