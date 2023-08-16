@@ -952,7 +952,7 @@ angular.module('client').factory('ManagedClient', ['$rootScope', '$injector',
             
             //Testing
             console.log("Created Link: " + link.name)
-            console.log("Url         : " + link.href + " ready to send!")
+            console.log("Url         : " + link.href)
             console.log("Profile     : " + link.sharingProfile.name) 
             
             
