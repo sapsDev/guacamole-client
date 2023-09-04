@@ -430,6 +430,16 @@ Guacamole.Client = function(tunnel) {
             touchState.angle, touchState.force);
 
     };
+    
+    this.sendActiveSharingLink = function sendActiveSharingLink(link) {
+        
+        // Do not send requests if not connected
+        if (!isConnected())
+            return;
+        
+        tunnel.sendMessage('activeSharingLink', link);
+        Debug.log("tunnel.sendMessage('activeSharingLink', link)");
+    }
 
     /**
      * Allocates an available stream index and creates a new
