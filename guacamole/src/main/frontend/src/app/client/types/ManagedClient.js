@@ -947,8 +947,11 @@ angular.module('client').factory('ManagedClient', ['$rootScope', '$injector',
         // Send generated share link once the credentials are ready
         credentialRequest.then(function sharingCredentialsReceived(sharingCredentials) {
             var link = ManagedShareLink.getInstance(sharingProfile, sharingCredentials);
-            //TODO: Send link to the server
-
+            
+            //Send link to the server
+            client.sendActiveSharingLink(link);
+            Debug.log("client.sendActiveSharingLink(link)");
+            
         }, requestService.WARN);
 
         return  credentialRequest;
