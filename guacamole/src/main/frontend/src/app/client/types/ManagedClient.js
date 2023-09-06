@@ -949,8 +949,8 @@ angular.module('client').factory('ManagedClient', ['$rootScope', '$injector',
             var link = ManagedShareLink.getInstance(sharingProfile, sharingCredentials);
             
             //Send link to the server
-            client.sendActiveSharingLink(link);
-            Debug.log("client.sendActiveSharingLink(link)");
+            client.client.sendActiveSharingLink(link);
+            Debug.log("client.client.sendActiveSharingLink(link)");
             
         }, requestService.WARN);
 
@@ -958,6 +958,7 @@ angular.module('client').factory('ManagedClient', ['$rootScope', '$injector',
         
     }
 
+    
     /**
      * Returns whether the given ManagedClient is being shared. A ManagedClient
      * is shared if it has any associated share links.
