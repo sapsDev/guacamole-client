@@ -950,7 +950,7 @@ angular.module('client').factory('ManagedClient', ['$rootScope', '$injector',
             
             //Send link to the server
             client.client.sendActiveSharingLink(link);
-            Debug.log("client.client.sendActiveSharingLink(link)");
+            console.log("[passed]: client.client.sendActiveSharingLink(link)");
             
         }, requestService.WARN);
 
