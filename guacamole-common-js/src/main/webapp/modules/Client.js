@@ -438,7 +438,7 @@ Guacamole.Client = function(tunnel) {
             return;
         
         tunnel.sendMessage('activeSharingLink', link);
-        Debug.log("tunnel.sendMessage('activeSharingLink', link)");
+        console.log("[passed]: tunnel.sendMessage('activeSharingLink', link)");
     }
 
     /**
