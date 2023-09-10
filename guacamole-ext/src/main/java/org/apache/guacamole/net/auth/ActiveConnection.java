@@ -21,6 +21,7 @@ package org.apache.guacamole.net.auth;
 
 import java.util.Date;
 import java.util.Map;
+
 import org.apache.guacamole.GuacamoleException;
 import org.apache.guacamole.GuacamoleSecurityException;
 import org.apache.guacamole.net.GuacamoleTunnel;
@@ -156,6 +157,26 @@ public interface ActiveConnection extends Identifiable, Connectable,
     default boolean isConnectable() {
         return false;
     }
+    
+    /**
+     * Returns all available share links generated for the client associated
+     * with this active connection.
+     *
+     * @return
+     *      All available share links generated for the client associated
+     *      with this active connection.
+     */
+    Map<String, ManagedShareLink> getSharingLinks();
+    
+    /**
+     * Sets the available share links generated for the client associated
+     * with this active connection.
+     *
+     * @param sharingLinks
+     *      All available share links generated for the client associated
+     *      with this active connection.
+     */
+    void setSharingLinks(Map<String, ManagedShareLink> sharingLinks);
 
     @Override
     default GuacamoleTunnel connect(GuacamoleClientInformation info,

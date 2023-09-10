@@ -20,7 +20,10 @@
 package org.apache.guacamole.rest.activeconnection;
 
 import java.util.Date;
+import java.util.Map;
+
 import org.apache.guacamole.net.auth.ActiveConnection;
+import org.apache.guacamole.net.auth.ManagedShareLink;
 
 /**
  * Information related to active connections which may be exposed through the
@@ -60,6 +63,12 @@ public class APIActiveConnection {
     private final boolean connectable;
 
     /**
+     * All available share links generated for the client associated
+     * with this active connection.
+     */
+    private final Map<String, ManagedShareLink> sharingLinks;
+
+    /**
      * Creates a new APIActiveConnection, copying the information from the given
      * active connection.
      *
@@ -73,6 +82,7 @@ public class APIActiveConnection {
         this.remoteHost           = connection.getRemoteHost();
         this.username             = connection.getUsername();
         this.connectable          = connection.isConnectable();
+        this.sharingLinks         = connection.getSharingLinks();
     }
 
     /**
@@ -138,5 +148,17 @@ public class APIActiveConnection {
     public boolean isConnectable() {
         return connectable;
     }
+    
+    /**
+     * Returns all available share links generated for the client associated
+     * with this active connection.
+     *
+     * @return
+     *      All available share links generated for the client associated
+     *      with this active connection.
+     */
+     public Map<String, ManagedShareLink> getSharingLinks() {
+         return sharingLinks; 
+     }
 
 }

@@ -431,6 +431,7 @@ Guacamole.Client = function(tunnel) {
 
     };
     
+    //TODO: Add documentation
     this.sendActiveSharingLink = function sendActiveSharingLink(link) {
         
         // Do not send requests if not connected

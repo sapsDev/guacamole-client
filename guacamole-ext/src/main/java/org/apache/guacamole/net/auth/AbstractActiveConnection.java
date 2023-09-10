@@ -20,6 +20,8 @@
 package org.apache.guacamole.net.auth;
 
 import java.util.Date;
+import java.util.Map;
+
 import org.apache.guacamole.net.GuacamoleTunnel;
 
 /**
@@ -58,7 +60,13 @@ public abstract class AbstractActiveConnection extends AbstractIdentifiable
      * The underlying GuacamoleTunnel.
      */
     private GuacamoleTunnel tunnel;
-
+    
+    /**
+     * All available share links generated for the client associated
+     * with this active connection.
+     */
+     private Map<String, ManagedShareLink> sharingLinks;
+     
     @Override
     public String getConnectionIdentifier() {
         return connectionIdentifier;
@@ -117,6 +125,16 @@ public abstract class AbstractActiveConnection extends AbstractIdentifiable
     @Override
     public void setTunnel(GuacamoleTunnel tunnel) {
         this.tunnel = tunnel;
+    }
+    
+    @Override
+    public Map<String, ManagedShareLink> getSharingLinks() {
+        return sharingLinks;
+    }
+    
+    @Override 
+    public void setSharingLinks(Map<String, ManagedShareLink> sharingLinks) {
+        this.sharingLinks = sharingLinks;
     }
 
 }
