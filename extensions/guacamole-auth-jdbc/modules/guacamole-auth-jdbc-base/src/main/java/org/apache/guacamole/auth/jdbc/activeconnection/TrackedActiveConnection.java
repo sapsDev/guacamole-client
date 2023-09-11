@@ -99,6 +99,12 @@ public class TrackedActiveConnection extends RestrictedObject implements ActiveC
      * Whether connections to this TrackedActiveConnection are allowed.
      */
     private boolean connectable;
+    
+    /**
+     * All available share links generated for the client associated
+     * with this active connection.
+     */
+    private Map<String, ManagedShareLink> sharingLinks;
 
     /**
      * Initializes this TrackedActiveConnection, copying the data associated
@@ -262,6 +268,16 @@ public class TrackedActiveConnection extends RestrictedObject implements ActiveC
     @Override
     public boolean isConnectable() {
         return connectable;
+    }
+    
+    @Override
+    public void setSharingLinks(Map<String, ManagedShareLink> sharingLinks) {
+        this.sharingLinks = sharingLinks;
+    }
+    
+    @Override 
+    public Map<String, ManagedShareLink> getSharingLinks() {
+        return sharingLinks;
     }
 
     @Override
