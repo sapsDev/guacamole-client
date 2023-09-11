@@ -34,6 +34,7 @@ import org.apache.guacamole.auth.jdbc.user.ModeledAuthenticatedUser;
 import org.apache.guacamole.net.GuacamoleTunnel;
 import org.apache.guacamole.net.auth.ActiveConnection;
 import org.apache.guacamole.net.auth.credentials.UserCredentials;
+import org.apache.guacamole.net.auth.ManagedShareLink;
 import org.apache.guacamole.protocol.GuacamoleClientInformation;
 
 /**
