@@ -21,6 +21,7 @@ package org.apache.guacamole.auth.jdbc.activeconnection;
 
 import com.google.inject.Inject;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.guacamole.GuacamoleException;
 import org.apache.guacamole.GuacamoleSecurityException;
@@ -138,6 +139,7 @@ public class TrackedActiveConnection extends RestrictedObject implements ActiveC
         super.init(currentUser);
         this.connectionRecord = activeConnectionRecord;
         this.connectable      = connectable;
+        this.sharingLinks     = new HashMap<>();
         
         // Copy all non-sensitive data from given record
         this.connection               = activeConnectionRecord.getConnection();
