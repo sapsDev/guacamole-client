@@ -952,6 +952,18 @@ angular.module('client').factory('ManagedClient', ['$rootScope', '$injector',
             client.client.sendActiveSharingLink(link);
             console.log("[passed]: client.client.sendActiveSharingLink(link)");
             
+            //Test
+            var clientIdentifier = ClientIdentifier.fromString(id); 
+            var test = activeConnectionService.getActiveConnection(clientIdentifier.dataSource, clientIdentifier.id);
+            console.log("[passed]: getActiveConnection");
+            console.log("ActiveConnection Details:");
+            console.log("[activeConnection]: identifier: " + test.identifier);
+            console.log("[activeConnection]: connectionIdentifier: " + test.connectionIdentifier);
+            console.log("[activeConnection]: startDate: " + test.startDate);
+            console.log("[activeConnection]: remoteHost: " + test.remoteHost);
+            console.log("[activeConnection]: username: " + test.username);
+            
+            
         }, requestService.WARN);
 
         return  credentialRequest;
