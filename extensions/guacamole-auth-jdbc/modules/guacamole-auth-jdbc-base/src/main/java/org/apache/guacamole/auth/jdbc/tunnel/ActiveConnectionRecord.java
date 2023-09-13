@@ -21,6 +21,8 @@ package org.apache.guacamole.auth.jdbc.tunnel;
 
 import java.util.Date;
 import java.util.UUID;
+import java.util.Map;
+import java.util.HashMap;
 import org.apache.guacamole.auth.jdbc.connection.ConnectionRecordModel;
 import org.apache.guacamole.auth.jdbc.connection.ModeledConnection;
 import org.apache.guacamole.auth.jdbc.connection.ModeledConnectionRecord;
@@ -30,6 +32,7 @@ import org.apache.guacamole.auth.jdbc.sharing.SharedObjectManager;
 import org.apache.guacamole.auth.jdbc.sharingprofile.ModeledSharingProfile;
 import org.apache.guacamole.auth.jdbc.user.RemoteAuthenticatedUser;
 import org.apache.guacamole.net.AbstractGuacamoleTunnel;
+import org.apache.guacamole.net.auth.ManagedShareLink;
 import org.apache.guacamole.net.GuacamoleSocket;
 import org.apache.guacamole.net.GuacamoleTunnel;
 
@@ -77,6 +80,12 @@ public class ActiveConnectionRecord extends ModeledConnectionRecord {
      * connection record.
      */
     private GuacamoleTunnel tunnel;
+    
+    /**
+     * All available share links generated for the client associated
+     * with this active connection.
+     */
+    private Map<String, ManagedShareLink> sharingLinks;
 
     /**
      * Map of all currently-shared connections.
@@ -188,6 +197,7 @@ public class ActiveConnectionRecord extends ModeledConnectionRecord {
         this.balancingGroup = balancingGroup;
         this.connection = connection;
         this.sharingProfile = sharingProfile;
+        this.sharingLinks = new HashMap<>();        
     }
    
     /**
@@ -417,6 +427,18 @@ public class ActiveConnectionRecord extends ModeledConnectionRecord {
      */
     public String getConnectionID() {
         return connectionID;
+    }
+    
+    /**
+     * Returns all available share links generated for the client associated
+     * with this active connection. 
+     *
+     * @return
+     *      All available share links generated for the client associated
+     *      with this active connection.
+     */
+    public Map<String, ManagedShareLink> getSharingLinks() {
+        return sharingLinks;
     }
 
     /**
