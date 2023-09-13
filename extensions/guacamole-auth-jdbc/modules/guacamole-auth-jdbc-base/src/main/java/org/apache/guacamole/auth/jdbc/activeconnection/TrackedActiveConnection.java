@@ -139,13 +139,13 @@ public class TrackedActiveConnection extends RestrictedObject implements ActiveC
         super.init(currentUser);
         this.connectionRecord = activeConnectionRecord;
         this.connectable      = connectable;
-        this.sharingLinks     = new HashMap<>();
         
         // Copy all non-sensitive data from given record
         this.connection               = activeConnectionRecord.getConnection();
         this.sharingProfileIdentifier = activeConnectionRecord.getSharingProfileIdentifier();
         this.identifier               = activeConnectionRecord.getUUID().toString();
         this.startDate                = activeConnectionRecord.getStartDate();
+        this.sharingLinks             = activeConnectionRecord.getSharingLinks();
 
         // Include sensitive data, too, if requested
         if (includeSensitiveInformation) {
